@@ -19,21 +19,20 @@
         <div>
             <h2>Mande uma mensagem</h2>
     <form>
-        <label for="Nome">Nome:</label>
-        <input type="text"id="Nome"><br>
-        <br>
+        <label for="nome">Nome:</label><br>
+        <input type="text"id="nome" onkeyup="validaNome()">
+        <div id='txtNome'></div>
         <br>
 
-        <label for="email">E-mail:</label>
-        <input type="text"id="email"><br>
+        <label for="email">E-mail:</label><br>
+        <input type="email"id="email" onkeyup="validaEmail()"> 
+        <div id="txtEmail"></div>
         <br>
+        <label for="assunto">Assunto:</label><br>
+        <textarea name="assunto" id="assunto" cols="60" rows="5" onkeyup="validaAssunto()"></textarea>
+        <div id="txtAssunto"></div>
         <br>
-        
-        <label for="assunto">Assunto:</label>
-        <textarea name="assunto" id="assunto" cols="60" rows="5"></textarea>
-        <br>
-        <br>
-        <button>Enviar</button>
+        <button onclick="enviar()">Enviar</button>
 
     </form>
         </div>
@@ -45,7 +44,8 @@
             <p>Rua Vicente José Cabral,133</p>
             <p>São Paulo - SP<p>
         
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.806233808051!2d-46.517891185385466!3d-23.503487765341895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce607f67f76aab%3A0xf179b2a0ff951adb!2sR.%20Vicente%20Jos%C3%A9%20Cabral%2C%20133%20-%20Eng.%20Goulart%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2003726-050!5e0!3m2!1spt-BR!2sbr!4v1623869381993!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.806233808051!2d-46.517891185385466!3d-23.503487765341895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce607f67f76aab%3A0xf179b2a0ff951adb!2sR.%20Vicente%20Jos%C3%A9%20Cabral%2C%20133%20-%20Eng.%20Goulart%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2003726-050!5e0!3m2!1spt-BR!2sbr!4v1623869381993!5m2!1spt-BR!2sbr" 
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" id="mapa" onmousemove="mapaZoom()" onmouseout="mapaNormal()"></iframe>
         </div>
     </div>
 
@@ -64,5 +64,7 @@
     </p>
 </footer>
     
+<script src="assets/js/script.js"></script>
+
 </body>
 </html>
